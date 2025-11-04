@@ -5,6 +5,7 @@ function HexExplorer() {
   const [red, setRed] = useState(255);
   const [green, setGreen] = useState(100);
   const [blue, setBlue] = useState(150);
+  const [showTutorial, setShowTutorial] = useState(true);
 
   const hexDigits = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'];
 
@@ -42,8 +43,65 @@ function HexExplorer() {
       <h2>🎨 Hexadecimal Color Explorer</h2>
       <p className="subtitle">Learn hexadecimal by mixing colors!</p>
 
+      {showTutorial && (
+        <div className="tutorial-section">
+          <button className="close-tutorial" onClick={() => setShowTutorial(false)}>×</button>
+          <h3>📚 What Are We Doing?</h3>
+          <div className="tutorial-content">
+            <p><strong>Your Mission:</strong> Create colors by mixing Red, Green, and Blue values!</p>
+            <div className="tutorial-steps">
+              <div className="step">
+                <span className="step-num">1️⃣</span>
+                <p><strong>Move the sliders</strong> to change Red, Green, and Blue amounts</p>
+              </div>
+              <div className="step">
+                <span className="step-num">2️⃣</span>
+                <p>Each slider goes from <strong>0 to 255</strong> (that's 0 to FF in hex!)</p>
+              </div>
+              <div className="step">
+                <span className="step-num">3️⃣</span>
+                <p>Watch the <strong>big box</strong> change color as you move sliders</p>
+              </div>
+              <div className="step">
+                <span className="step-num">4️⃣</span>
+                <p>See the <strong>hex code</strong> update automatically (starts with #)</p>
+              </div>
+              <div className="step">
+                <span className="step-num">5️⃣</span>
+                <p>Notice how <strong>decimal and hex</strong> values both show on sliders</p>
+              </div>
+            </div>
+            <div className="tutorial-example">
+              <p><strong>Example:</strong> To make pure white:</p>
+              <p>Red = 255 (FF), Green = 255 (FF), Blue = 255 (FF)</p>
+              <p>Result: #FFFFFF = White!</p>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {!showTutorial && (
+        <button className="show-help" onClick={() => setShowTutorial(true)}>
+          ❓ Show Help
+        </button>
+      )}
+
       <div className="color-preview" style={{ backgroundColor: getColorHex() }}>
         <div className="hex-code">{getColorHex()}</div>
+        <div className="color-breakdown">
+          <div className="breakdown-item">
+            <span>R: {red}</span>
+            <span className="hex-small">({decimalToHex(red)})</span>
+          </div>
+          <div className="breakdown-item">
+            <span>G: {green}</span>
+            <span className="hex-small">({decimalToHex(green)})</span>
+          </div>
+          <div className="breakdown-item">
+            <span>B: {blue}</span>
+            <span className="hex-small">({decimalToHex(blue)})</span>
+          </div>
+        </div>
       </div>
 
       <div className="sliders">

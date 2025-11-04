@@ -181,6 +181,26 @@ body {
   background: linear-gradient(to bottom, white 0%, #fdebd0 100%);
 }
 
+.lesson-card.profile {
+  border-color: #9b59b6;
+  background: linear-gradient(to bottom, white 0%, #f4ecf7 100%);
+}
+
+.lesson-card.ascii {
+  border-color: #16a085;
+  background: linear-gradient(to bottom, white 0%, #d5f5f6 100%);
+}
+
+.lesson-card.computer {
+  border-color: #34495e;
+  background: linear-gradient(to bottom, white 0%, #ecf0f1 100%);
+}
+
+.lesson-card.logic {
+  border-color: #8e44ad;
+  background: linear-gradient(to bottom, white 0%, #e8daef 100%);
+}
+
 .card-icon {
   font-size: 4em;
   margin-bottom: 15px;

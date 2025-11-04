@@ -9,10 +9,38 @@ function BinaryGame() {
   const [level, setLevel] = useState('easy'); // easy, medium, hard
   const [history, setHistory] = useState([]); // Track last 5 conversions
   const [showTutorial, setShowTutorial] = useState(true);
+  const [highScores, setHighScores] = useState([]);
+  const [showNameEntry, setShowNameEntry] = useState(false);
+  const [playerName, setPlayerName] = useState('');
+  const [showLeaderboard, setShowLeaderboard] = useState(false);
 
   useEffect(() => {
     generateNewNumber();
+    loadHighScores();
   }, [level]);
+
+  const loadHighScores = () => {
+    const saved = localStorage.getItem('binaryGameHighScores');
+    if (saved) {
+      setHighScores(JSON.parse(saved));
+    }
+  };
+
+  const saveHighScore = (name, finalScore) => {
+    const newScore = {
+      name: name || 'Anonymous',
+      score: finalScore,
+      level: level,
+      date: new Date().toLocaleDateString()
+    };
+
+    const updated = [...highScores, newScore]
+      .sort((a, b) => b.score - a.score)
+      .slice(0, 10); // Keep top 10
+
+    setHighScores(updated);
+    localStorage.setItem('binaryGameHighScores', JSON.stringify(updated));
+  };
 
   const generateNewNumber = () => {
     let max;
@@ -66,7 +94,17 @@ function BinaryGame() {
 
     if (userAnswer === targetNumber) {
       setMessage('🎉 Correct! Great job!');
-      setScore(score + 1);
+      const newScore = score + 1;
+      setScore(newScore);
+
+      // Check if this is a high score after every 5 correct answers
+      if (newScore > 0 && newScore % 5 === 0) {
+        const lowestHighScore = highScores.length === 10 ? highScores[9].score : 0;
+        if (highScores.length < 10 || newScore > lowestHighScore) {
+          setShowNameEntry(true);
+        }
+      }
+
       setTimeout(() => {
         generateNewNumber();
       }, 1500);
@@ -75,14 +113,86 @@ function BinaryGame() {
     }
   };
 
+  const handleSaveScore = () => {
+    if (playerName.trim()) {
+      saveHighScore(playerName.trim(), score);
+      setShowNameEntry(false);
+      setPlayerName('');
+      setShowLeaderboard(true);
+    }
+  };
+
+  const handleSkipScore = () => {
+    setShowNameEntry(false);
+    setPlayerName('');
+  };
+
   const bitsToShow = level === 'easy' ? 4 : level === 'medium' ? 6 : 8;
 
   return (
     <div className="binary-game">
       <div className="game-header">
         <h2>🎮 Binary Number Game</h2>
-        <div className="score">Score: {score}</div>
+        <div className="header-right">
+          <div className="score">Score: {score}</div>
+          <button
+            className="leaderboard-btn"
+            onClick={() => setShowLeaderboard(!showLeaderboard)}
+          >
+            🏆 Leaderboard
+          </button>
+        </div>
       </div>
+
+      {showLeaderboard && (
+        <div className="leaderboard-modal">
+          <div className="leaderboard-content">
+            <button className="close-modal" onClick={() => setShowLeaderboard(false)}>×</button>
+            <h3>🏆 Top 10 High Scores</h3>
+            {highScores.length === 0 ? (
+              <p className="no-scores">No high scores yet. Be the first!</p>
+            ) : (
+              <div className="scores-list">
+                {highScores.map((entry, index) => (
+                  <div key={index} className={`score-entry rank-${index + 1}`}>
+                    <span className="rank">#{index + 1}</span>
+                    <span className="player-name">{entry.name}</span>
+                    <span className="player-score">{entry.score}</span>
+                    <span className="player-level">{entry.level}</span>
+                    <span className="player-date">{entry.date}</span>
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+        </div>
+      )}
+
+      {showNameEntry && (
+        <div className="name-entry-modal">
+          <div className="name-entry-content">
+            <h3>🎉 Great Score!</h3>
+            <p>You scored {score} points! Enter your name for the leaderboard:</p>
+            <input
+              type="text"
+              value={playerName}
+              onChange={(e) => setPlayerName(e.target.value)}
+              placeholder="Your name"
+              maxLength={20}
+              className="name-input"
+              onKeyPress={(e) => e.key === 'Enter' && handleSaveScore()}
+            />
+            <div className="name-entry-buttons">
+              <button className="save-score-btn" onClick={handleSaveScore}>
+                Save Score
+              </button>
+              <button className="skip-btn" onClick={handleSkipScore}>
+                Skip
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
 
       <div className="level-selector">
         <button

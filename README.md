@@ -61,6 +61,39 @@ An interactive educational application designed to teach programming concepts to
 - Size comparison calculations
 - Mind-blowing facts about data storage
 
+### 8. Name Decoder (Personalization)
+- Enter your name and see it decoded to binary, hex, and ASCII
+- Character-by-character breakdown showing all representations
+- Fun facts about your name's data size
+- Privacy-focused: all data stays on your device (LocalStorage)
+- Educational explainer section
+- No sign-up required
+
+### 9. ASCII Character Explorer
+- Interactive ASCII table with all printable characters
+- Type any character to see its representations
+- Decimal, Binary, Hexadecimal, and Octal conversions
+- Category filters (numbers, uppercase, lowercase, special characters)
+- Truth tables showing complete character mappings
+- Real-world applications and fun facts
+- Quick reference for common special characters
+
+### 10. How Computers Work
+- Interactive component diagram (CPU, RAM, Storage, GPU, etc.)
+- Animated Fetch-Decode-Execute CPU cycle
+- Speed comparison between computer components
+- Binary logic with transistor visualization
+- Step-by-step data journey (opening a file)
+- Mind-blowing facts about computer hardware
+
+### 11. Boolean Logic Gates
+- Interactive gate simulator (AND, OR, NOT, NAND, NOR, XOR)
+- Toggle inputs and see outputs in real-time
+- Complete truth tables for each gate
+- Real-world examples and applications
+- Circuit combination examples
+- Fun challenges and mind-blowing facts
+
 ## Project Structure
 
 ```
@@ -68,14 +101,17 @@ CC_Boo/
 ├── learning-app/          # React web application
 │   ├── src/
 │   │   ├── components/    # React components
-│   │   │   ├── BinaryGame.jsx
-│   │   │   ├── BinaryGame.css
-│   │   │   ├── HexExplorer.jsx
-│   │   │   ├── HexExplorer.css
-│   │   │   ├── MemoryVisualizer.jsx
-│   │   │   ├── MemoryVisualizer.css
-│   │   │   ├── CodeExamples.jsx
-│   │   │   └── CodeExamples.css
+│   │   │   ├── BinaryGame.jsx/.css
+│   │   │   ├── HexExplorer.jsx/.css
+│   │   │   ├── NumberConverter.jsx/.css
+│   │   │   ├── MemoryVisualizer.jsx/.css
+│   │   │   ├── CodeExamples.jsx/.css
+│   │   │   ├── InternetWorks.jsx/.css
+│   │   │   ├── DataStorage.jsx/.css
+│   │   │   ├── NameDecoder.jsx/.css
+│   │   │   ├── ASCIIExplorer.jsx/.css
+│   │   │   ├── ComputerWorks.jsx/.css
+│   │   │   └── LogicGates.jsx/.css
 │   │   ├── App.jsx        # Main application
 │   │   └── App.css        # Main styling
 │   └── package.json

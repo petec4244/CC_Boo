@@ -6,6 +6,10 @@ import CodeExamples from './components/CodeExamples';
 import NumberConverter from './components/NumberConverter';
 import InternetWorks from './components/InternetWorks';
 import DataStorage from './components/DataStorage';
+import NameDecoder from './components/NameDecoder';
+import ASCIIExplorer from './components/ASCIIExplorer';
+import ComputerWorks from './components/ComputerWorks';
+import LogicGates from './components/LogicGates';
 import './App.css';
 
 function App() {
@@ -27,6 +31,14 @@ function App() {
         return <InternetWorks />;
       case 'storage':
         return <DataStorage />;
+      case 'profile':
+        return <NameDecoder />;
+      case 'ascii':
+        return <ASCIIExplorer />;
+      case 'computer':
+        return <ComputerWorks />;
+      case 'logic':
+        return <LogicGates />;
       case 'home':
       default:
         return <HomePage setCurrentLesson={setCurrentLesson} />;
@@ -48,6 +60,12 @@ function App() {
           onClick={() => setCurrentLesson('home')}
         >
           🏠 Home
+        </button>
+        <button
+          className={currentLesson === 'profile' ? 'active' : ''}
+          onClick={() => setCurrentLesson('profile')}
+        >
+          👤 My Name
         </button>
         <button
           className={currentLesson === 'binary' ? 'active' : ''}
@@ -90,6 +108,24 @@ function App() {
           onClick={() => setCurrentLesson('storage')}
         >
           💾 Storage
+        </button>
+        <button
+          className={currentLesson === 'ascii' ? 'active' : ''}
+          onClick={() => setCurrentLesson('ascii')}
+        >
+          🔤 ASCII
+        </button>
+        <button
+          className={currentLesson === 'computer' ? 'active' : ''}
+          onClick={() => setCurrentLesson('computer')}
+        >
+          💻 How It Works
+        </button>
+        <button
+          className={currentLesson === 'logic' ? 'active' : ''}
+          onClick={() => setCurrentLesson('logic')}
+        >
+          ⚡ Logic Gates
         </button>
       </nav>
 
@@ -163,6 +199,34 @@ function HomePage({ setCurrentLesson }) {
           <h3>Data Storage</h3>
           <p>Learn about bytes, kilobytes, and gigabytes! Compare file sizes and storage devices.</p>
           <div className="card-footer">Click to learn!</div>
+        </div>
+
+        <div className="lesson-card profile" onClick={() => setCurrentLesson('profile')}>
+          <div className="card-icon">👤</div>
+          <h3>My Name Decoder</h3>
+          <p>See your name in binary, hex, and ASCII! Personalize your learning experience with data.</p>
+          <div className="card-footer">Click to decode!</div>
+        </div>
+
+        <div className="lesson-card ascii" onClick={() => setCurrentLesson('ascii')}>
+          <div className="card-icon">🔤</div>
+          <h3>ASCII Explorer</h3>
+          <p>Discover how computers store text! Explore the ASCII table and decode any character.</p>
+          <div className="card-footer">Click to explore!</div>
+        </div>
+
+        <div className="lesson-card computer" onClick={() => setCurrentLesson('computer')}>
+          <div className="card-icon">💻</div>
+          <h3>How Computers Work</h3>
+          <p>Explore CPU, RAM, and hardware! Learn what makes computers so powerful and fast.</p>
+          <div className="card-footer">Click to discover!</div>
+        </div>
+
+        <div className="lesson-card logic" onClick={() => setCurrentLesson('logic')}>
+          <div className="card-icon">⚡</div>
+          <h3>Boolean Logic Gates</h3>
+          <p>Discover AND, OR, NOT gates! Learn the building blocks of all computer logic.</p>
+          <div className="card-footer">Click to explore!</div>
         </div>
       </div>
 

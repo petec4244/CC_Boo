@@ -10,6 +10,13 @@ import NameDecoder from './components/NameDecoder';
 import ASCIIExplorer from './components/ASCIIExplorer';
 import ComputerWorks from './components/ComputerWorks';
 import LogicGates from './components/LogicGates';
+import PrerequisiteWarning from './components/PrerequisiteWarning';
+import {
+  hasCompletedPrerequisites,
+  getMissingPrerequisites,
+  markModuleComplete,
+  getModuleInfo
+} from './utils/progressTracker';
 import './App.css';
 
 function App() {
@@ -18,6 +25,9 @@ function App() {
     const saved = localStorage.getItem('darkMode');
     return saved ? JSON.parse(saved) : false;
   });
+  const [showPrereqWarning, setShowPrereqWarning] = useState(false);
+  const [pendingLesson, setPendingLesson] = useState(null);
+  const [missingPrereqs, setMissingPrereqs] = useState([]);
 
   useEffect(() => {
     localStorage.setItem('darkMode', JSON.stringify(darkMode));
@@ -27,6 +37,36 @@ function App() {
       document.body.classList.remove('dark-mode');
     }
   }, [darkMode]);
+
+  const handleLessonChange = (lessonId) => {
+    if (lessonId === 'home') {
+      setCurrentLesson('home');
+      return;
+    }
+
+    // Check prerequisites
+    if (!hasCompletedPrerequisites(lessonId)) {
+      const missing = getMissingPrerequisites(lessonId);
+      setMissingPrereqs(missing);
+      setPendingLesson(lessonId);
+      setShowPrereqWarning(true);
+    } else {
+      setCurrentLesson(lessonId);
+      // Mark module as accessed (user can manually mark as complete later)
+    }
+  };
+
+  const handleContinueAnyway = () => {
+    setCurrentLesson(pendingLesson);
+    setShowPrereqWarning(false);
+    setPendingLesson(null);
+  };
+
+  const handleGoBack = () => {
+    setShowPrereqWarning(false);
+    setPendingLesson(null);
+    setCurrentLesson('home');
+  };
 
   const renderLesson = () => {
     switch(currentLesson) {
@@ -54,15 +94,24 @@ function App() {
         return <LogicGates />;
       case 'home':
       default:
-        return <HomePage setCurrentLesson={setCurrentLesson} />;
+        return <HomePage setCurrentLesson={handleLessonChange} />;
     }
   };
 
   return (
     <div className={`app ${darkMode ? 'dark-mode' : ''}`}>
+      {showPrereqWarning && (
+        <PrerequisiteWarning
+          moduleName={getModuleInfo(pendingLesson)?.title || pendingLesson}
+          missingPrereqs={missingPrereqs}
+          onContinue={handleContinueAnyway}
+          onGoBack={handleGoBack}
+        />
+      )}
+
       <header className="app-header">
         <div className="header-content">
-          <h1 onClick={() => setCurrentLesson('home')} style={{ cursor: 'pointer' }}>
+          <h1 onClick={() => handleLessonChange('home')} style={{ cursor: 'pointer' }}>
             🚀 Computer Data & Memory Learning Lab
           </h1>
           <button
@@ -79,73 +128,73 @@ function App() {
       <nav className="navigation">
         <button
           className={currentLesson === 'home' ? 'active' : ''}
-          onClick={() => setCurrentLesson('home')}
+          onClick={() => handleLessonChange('home')}
         >
           🏠 Home
         </button>
         <button
           className={currentLesson === 'profile' ? 'active' : ''}
-          onClick={() => setCurrentLesson('profile')}
+          onClick={() => handleLessonChange('profile')}
         >
           👤 My Name
         </button>
         <button
           className={currentLesson === 'binary' ? 'active' : ''}
-          onClick={() => setCurrentLesson('binary')}
+          onClick={() => handleLessonChange('binary')}
         >
           🎮 Binary Game
         </button>
         <button
           className={currentLesson === 'hex' ? 'active' : ''}
-          onClick={() => setCurrentLesson('hex')}
+          onClick={() => handleLessonChange('hex')}
         >
           🎨 Hex Colors
         </button>
         <button
           className={currentLesson === 'converter' ? 'active' : ''}
-          onClick={() => setCurrentLesson('converter')}
+          onClick={() => handleLessonChange('converter')}
         >
           🔄 Converter
         </button>
         <button
           className={currentLesson === 'memory' ? 'active' : ''}
-          onClick={() => setCurrentLesson('memory')}
+          onClick={() => handleLessonChange('memory')}
         >
           🧠 Memory
         </button>
         <button
           className={currentLesson === 'code' ? 'active' : ''}
-          onClick={() => setCurrentLesson('code')}
+          onClick={() => handleLessonChange('code')}
         >
           💻 Code Examples
         </button>
         <button
           className={currentLesson === 'internet' ? 'active' : ''}
-          onClick={() => setCurrentLesson('internet')}
+          onClick={() => handleLessonChange('internet')}
         >
           🌐 Internet
         </button>
         <button
           className={currentLesson === 'storage' ? 'active' : ''}
-          onClick={() => setCurrentLesson('storage')}
+          onClick={() => handleLessonChange('storage')}
         >
           💾 Storage
         </button>
         <button
           className={currentLesson === 'ascii' ? 'active' : ''}
-          onClick={() => setCurrentLesson('ascii')}
+          onClick={() => handleLessonChange('ascii')}
         >
           🔤 ASCII
         </button>
         <button
           className={currentLesson === 'computer' ? 'active' : ''}
-          onClick={() => setCurrentLesson('computer')}
+          onClick={() => handleLessonChange('computer')}
         >
           💻 How It Works
         </button>
         <button
           className={currentLesson === 'logic' ? 'active' : ''}
-          onClick={() => setCurrentLesson('logic')}
+          onClick={() => handleLessonChange('logic')}
         >
           ⚡ Logic Gates
         </button>
@@ -171,6 +220,13 @@ function HomePage({ setCurrentLesson }) {
           Computers are amazing machines that store and process information in special ways.
           This app will teach you the basics of how computers work with data and memory!
         </p>
+        <div className="journey-notice">
+          <div className="notice-icon">🎯</div>
+          <div className="notice-content">
+            <strong>Learning Journey Mode:</strong> This app guides you through concepts step-by-step.
+            Some advanced modules will show a warning if you haven't learned the basics first, but you can always continue anyway!
+          </div>
+        </div>
       </div>
 
       <div className="lessons-grid">

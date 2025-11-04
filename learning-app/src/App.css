@@ -625,3 +625,51 @@ body.dark-mode {
 .app.dark-mode .navigation::-webkit-scrollbar-thumb:hover {
   background: #3498db;
 }
+/* Ensure all white background elements have proper text colors */
+
+/* Fix for any white backgrounds without explicit text colors */
+.component-detail,
+.truth-table,
+.circuit-example,
+.binary-examples,
+.transistor-demo,
+.journey-step,
+.simulator-box,
+.gate-info-box,
+.custom-info-display,
+.info-item,
+.speed-analogy,
+.cpu-fact,
+.journey-time,
+.circuit-note,
+.quick-char-card,
+.table-row,
+.ascii-table,
+.compare-item,
+.speed-card,
+.app-card,
+.fact-item,
+.info-card,
+.challenge-card {
+  color: #2c3e50 !important;
+}
+
+/* Make sure headers and titles are visible */
+.component-detail h4,
+.info-card h4,
+.challenge-content h4,
+.app-card h4,
+.speed-analogy h4,
+.binary-examples h4 {
+  color: #2c3e50 !important;
+}
+
+/* Make sure paragraphs are visible */
+.component-detail p,
+.info-card p,
+.challenge-content p,
+.app-card p,
+.fact-item p,
+.fact-card p {
+  color: #34495e !important;
+}

@@ -529,3 +529,59 @@
     font-size: 20px;
   }
 }
+
+/* Dark Mode Support */
+.app.dark-mode .ascii-explorer {
+  color: #ecf0f1;
+}
+
+.app.dark-mode .explorer-header {
+  background: linear-gradient(135deg, #34495e 0%, #2c3e50 100%);
+}
+
+.app.dark-mode .explorer-section {
+  background: #34495e;
+  color: #ecf0f1;
+}
+
+.app.dark-mode .char-input {
+  background: #2c3e50;
+  border-color: #5dade2;
+  color: #ecf0f1;
+}
+
+.app.dark-mode .custom-info-display,
+.app.dark-mode .info-item {
+  background: #415a77;
+  color: #ecf0f1;
+}
+
+.app.dark-mode .ascii-table,
+.app.dark-mode .table-row {
+  background: #2c3e50;
+  color: #ecf0f1;
+}
+
+.app.dark-mode .table-header {
+  background: #5dade2;
+  color: #1a1a2e;
+}
+
+.app.dark-mode .info-card {
+  background: #415a77;
+  color: #ecf0f1;
+}
+
+.app.dark-mode .info-card h4,
+.app.dark-mode .info-card p,
+.app.dark-mode .info-card li {
+  color: #ecf0f1;
+}
+
+.app.dark-mode .comparison-section {
+  background: linear-gradient(135deg, #34495e 0%, #2c3e50 100%);
+}
+
+.app.dark-mode .compare-note {
+  color: #ecf0f1;
+}

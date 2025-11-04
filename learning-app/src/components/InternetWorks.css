@@ -707,3 +707,50 @@
     font-size: 12px;
   }
 }
+
+/* Dark Mode Support */
+.app.dark-mode .internet-works {
+  color: #ecf0f1;
+}
+
+.app.dark-mode .works-header {
+  background: linear-gradient(135deg, #34495e 0%, #2c3e50 100%);
+}
+
+.app.dark-mode .works-section {
+  background: #34495e;
+  color: #ecf0f1;
+}
+
+.app.dark-mode .topic-card {
+  background: #415a77;
+  color: #ecf0f1;
+}
+
+.app.dark-mode .animation-box,
+.app.dark-mode .data-box {
+  background: #2c3e50;
+  color: #ecf0f1;
+}
+
+.app.dark-mode .ip-section input {
+  background: #2c3e50;
+  border-color: #5dade2;
+  color: #ecf0f1;
+}
+
+.app.dark-mode .connection-card {
+  background: #415a77;
+  color: #ecf0f1;
+}
+
+.app.dark-mode .info-card {
+  background: #415a77;
+  color: #ecf0f1;
+}
+
+.app.dark-mode .info-card h4,
+.app.dark-mode .info-card p,
+.app.dark-mode .info-card li {
+  color: #ecf0f1;
+}

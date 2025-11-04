@@ -2,6 +2,13 @@
 
 An interactive educational application designed to teach programming concepts to kids (6th grade level). This project helps young learners understand binary numbers, hexadecimal, memory management, and data structures through fun, interactive games and visualizations.
 
+## ✨ Key Features
+- 🌙 **Dark Mode** - Toggle between light and dark themes for comfortable viewing
+- 📱 **Mobile Responsive** - Optimized for phones, tablets, and desktops
+- 🔒 **Privacy-Focused** - No sign-up required, all data stays on your device
+- 🎮 **11 Interactive Modules** - Comprehensive learning experience
+- 💾 **LocalStorage Persistence** - Your progress and preferences are saved
+
 ## Features
 
 ### 1. Binary Number Game

@@ -440,3 +440,56 @@
     text-align: center;
   }
 }
+
+/* Dark Mode Support */
+.app.dark-mode .binary-game {
+  color: #ecf0f1;
+}
+
+.app.dark-mode .game-header {
+  background: linear-gradient(135deg, #34495e 0%, #2c3e50 100%);
+}
+
+.app.dark-mode .game-section {
+  background: #34495e;
+  color: #ecf0f1;
+}
+
+.app.dark-mode .binary-display {
+  background: #2c3e50;
+  color: #ecf0f1;
+}
+
+.app.dark-mode .bit {
+  background: #415a77;
+  color: #ecf0f1;
+}
+
+.app.dark-mode .controls button {
+  background: #5dade2;
+  color: #1a1a2e;
+}
+
+.app.dark-mode .controls button:hover {
+  background: #3498db;
+}
+
+.app.dark-mode .answer-input {
+  background: #2c3e50;
+  border-color: #5dade2;
+  color: #ecf0f1;
+}
+
+.app.dark-mode .tutorial-section {
+  background: #2c3e50;
+  color: #ecf0f1;
+}
+
+.app.dark-mode .history-section {
+  background: #2c3e50;
+}
+
+.app.dark-mode .history-entry {
+  background: #415a77;
+  color: #ecf0f1;
+}

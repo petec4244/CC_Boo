@@ -3,6 +3,9 @@ import BinaryGame from './components/BinaryGame';
 import HexExplorer from './components/HexExplorer';
 import MemoryVisualizer from './components/MemoryVisualizer';
 import CodeExamples from './components/CodeExamples';
+import NumberConverter from './components/NumberConverter';
+import InternetWorks from './components/InternetWorks';
+import DataStorage from './components/DataStorage';
 import './App.css';
 
 function App() {
@@ -14,10 +17,16 @@ function App() {
         return <BinaryGame />;
       case 'hex':
         return <HexExplorer />;
+      case 'converter':
+        return <NumberConverter />;
       case 'memory':
         return <MemoryVisualizer />;
       case 'code':
         return <CodeExamples />;
+      case 'internet':
+        return <InternetWorks />;
+      case 'storage':
+        return <DataStorage />;
       case 'home':
       default:
         return <HomePage setCurrentLesson={setCurrentLesson} />;
@@ -53,6 +62,12 @@ function App() {
           🎨 Hex Colors
         </button>
         <button
+          className={currentLesson === 'converter' ? 'active' : ''}
+          onClick={() => setCurrentLesson('converter')}
+        >
+          🔄 Converter
+        </button>
+        <button
           className={currentLesson === 'memory' ? 'active' : ''}
           onClick={() => setCurrentLesson('memory')}
         >
@@ -63,6 +78,18 @@ function App() {
           onClick={() => setCurrentLesson('code')}
         >
           💻 Code Examples
+        </button>
+        <button
+          className={currentLesson === 'internet' ? 'active' : ''}
+          onClick={() => setCurrentLesson('internet')}
+        >
+          🌐 Internet
+        </button>
+        <button
+          className={currentLesson === 'storage' ? 'active' : ''}
+          onClick={() => setCurrentLesson('storage')}
+        >
+          💾 Storage
         </button>
       </nav>
 
@@ -103,6 +130,13 @@ function HomePage({ setCurrentLesson }) {
           <div className="card-footer">Click to explore!</div>
         </div>
 
+        <div className="lesson-card converter" onClick={() => setCurrentLesson('converter')}>
+          <div className="card-icon">🔄</div>
+          <h3>Number Converter</h3>
+          <p>See how Binary, Decimal, and Hex connect! Convert between number systems instantly.</p>
+          <div className="card-footer">Click to convert!</div>
+        </div>
+
         <div className="lesson-card memory" onClick={() => setCurrentLesson('memory')}>
           <div className="card-icon">🧠</div>
           <h3>Memory Visualizer</h3>
@@ -115,6 +149,20 @@ function HomePage({ setCurrentLesson }) {
           <h3>Real Code Examples</h3>
           <p>See real programming code in Python, C, and C++! Learn how professional programmers work with data.</p>
           <div className="card-footer">Click to code!</div>
+        </div>
+
+        <div className="lesson-card internet" onClick={() => setCurrentLesson('internet')}>
+          <div className="card-icon">🌐</div>
+          <h3>How Internet Works</h3>
+          <p>Follow data's journey across the internet! Learn about IP addresses, DNS, and connections.</p>
+          <div className="card-footer">Click to explore!</div>
+        </div>
+
+        <div className="lesson-card storage" onClick={() => setCurrentLesson('storage')}>
+          <div className="card-icon">💾</div>
+          <h3>Data Storage</h3>
+          <p>Learn about bytes, kilobytes, and gigabytes! Compare file sizes and storage devices.</p>
+          <div className="card-footer">Click to learn!</div>
         </div>
       </div>
 

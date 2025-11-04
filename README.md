@@ -7,30 +7,59 @@ An interactive educational application designed to teach programming concepts to
 ### 1. Binary Number Game
 - Interactive game to learn binary (base-2) numbering system
 - Three difficulty levels: Easy (4 bits), Medium (6 bits), Hard (8 bits)
+- Step-by-step tutorial explaining game mechanics
+- Rolling history showing last 5 conversions
 - Visual representation of bit values
 - Real-time feedback and scoring
 - Educational explanations of how binary works
 
 ### 2. Hexadecimal Color Explorer
 - Learn hexadecimal (base-16) numbering through colors
-- Interactive RGB sliders showing decimal and hex values
-- Live color preview
+- Interactive tutorial with 5-step guide
+- Interactive RGB sliders showing decimal and hex values simultaneously
+- Live color preview with RGB breakdown
 - Preset colors to explore
 - Conversion examples and charts
 
-### 3. Memory Visualizer
+### 3. Number System Converter
+- Convert between Binary, Decimal, and Hexadecimal instantly
+- Interactive input for all three number systems
+- Visual breakdown of how each system works
+- Binary bit-by-bit explanation
+- Hexadecimal digit-by-digit calculation
+- Quick examples with common numbers
+- Key insights explaining the connections
+
+### 4. Memory Visualizer
 - Interactive visualization of computer memory
 - Add and remove variables to see how they're stored
 - View memory addresses and sizes
 - Learn about different data types (char, int, float, double)
 - Understand memory allocation visually
 
-### 4. Code Examples
+### 5. Code Examples
 - Real code examples in Python, C, and C++
 - Three topics: Data Types, Binary Operations, and Memory
 - Side-by-side language comparison
 - Syntax-highlighted code blocks
 - Educational explanations for each concept
+
+### 6. How the Internet Works
+- Animated data journey from your computer to servers
+- IP address explorer with breakdowns
+- DNS (Domain Name System) explained visually
+- Client-Server model demonstrations
+- Types of internet connections compared (Wi-Fi, Ethernet, 5G)
+- Speed comparisons with visual bars
+- Real-world examples for each concept
+
+### 7. Data Storage & File Sizes
+- Learn about bits, bytes, KB, MB, GB, and TB
+- Interactive size converter
+- Real-world file size examples (photos, songs, movies, games)
+- Storage device evolution timeline
+- Size comparison calculations
+- Mind-blowing facts about data storage
 
 ## Project Structure
 

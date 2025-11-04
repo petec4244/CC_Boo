@@ -393,3 +393,37 @@
   flex-direction: column;
   gap: 20px;
 }
+
+/* Dark Mode Support */
+.app.dark-mode .hex-explorer {
+  color: #ecf0f1;
+}
+
+.app.dark-mode .explorer-header {
+  background: linear-gradient(135deg, #34495e 0%, #2c3e50 100%);
+}
+
+.app.dark-mode .explorer-section {
+  background: #34495e;
+  color: #ecf0f1;
+}
+
+.app.dark-mode .hex-input {
+  background: #2c3e50;
+  border-color: #5dade2;
+  color: #ecf0f1;
+}
+
+.app.dark-mode .preset-colors button {
+  border-color: #5dade2;
+}
+
+.app.dark-mode .conversion-table {
+  background: #2c3e50;
+  color: #ecf0f1;
+}
+
+.app.dark-mode .tutorial-section {
+  background: #2c3e50;
+  color: #ecf0f1;
+}

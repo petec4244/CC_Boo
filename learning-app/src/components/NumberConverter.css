@@ -443,3 +443,33 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* Dark Mode Support */
+.app.dark-mode .number-converter {
+  color: #ecf0f1;
+}
+
+.app.dark-mode .converter-header {
+  background: linear-gradient(135deg, #34495e 0%, #2c3e50 100%);
+}
+
+.app.dark-mode .converter-section {
+  background: #34495e;
+  color: #ecf0f1;
+}
+
+.app.dark-mode .converter-input {
+  background: #2c3e50;
+  border-color: #5dade2;
+  color: #ecf0f1;
+}
+
+.app.dark-mode .breakdown-box {
+  background: #2c3e50;
+  color: #ecf0f1;
+}
+
+.app.dark-mode .insight-card {
+  background: #415a77;
+  color: #ecf0f1;
+}

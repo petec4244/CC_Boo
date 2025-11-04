@@ -335,3 +335,51 @@
     width: 100%;
   }
 }
+
+/* Dark Mode Support */
+.app.dark-mode .data-storage {
+  color: #ecf0f1;
+}
+
+.app.dark-mode .storage-header {
+  background: linear-gradient(135deg, #34495e 0%, #2c3e50 100%);
+}
+
+.app.dark-mode .storage-section {
+  background: #34495e;
+  color: #ecf0f1;
+}
+
+.app.dark-mode .size-input {
+  background: #2c3e50;
+  border-color: #5dade2;
+  color: #ecf0f1;
+}
+
+.app.dark-mode .unit-selector button {
+  background: #415a77;
+  color: #ecf0f1;
+  border-color: #5dade2;
+}
+
+.app.dark-mode .unit-selector button.active {
+  background: #5dade2;
+  color: #1a1a2e;
+}
+
+.app.dark-mode .example-card,
+.app.dark-mode .device-card {
+  background: #415a77;
+  color: #ecf0f1;
+}
+
+.app.dark-mode .info-card {
+  background: #415a77;
+  color: #ecf0f1;
+}
+
+.app.dark-mode .info-card h4,
+.app.dark-mode .info-card p,
+.app.dark-mode .info-card li {
+  color: #ecf0f1;
+}

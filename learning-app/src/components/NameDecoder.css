@@ -456,3 +456,40 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* Dark Mode Support */
+.app.dark-mode .name-decoder {
+  color: #ecf0f1;
+}
+
+.app.dark-mode .decoder-header {
+  background: linear-gradient(135deg, #34495e 0%, #2c3e50 100%);
+}
+
+.app.dark-mode .decoder-section {
+  background: #34495e;
+  color: #ecf0f1;
+}
+
+.app.dark-mode .name-input {
+  background: #2c3e50;
+  border-color: #5dade2;
+  color: #ecf0f1;
+}
+
+.app.dark-mode .character-card,
+.app.dark-mode .full-representation {
+  background: #415a77;
+  color: #ecf0f1;
+}
+
+.app.dark-mode .info-card {
+  background: #415a77;
+  color: #ecf0f1;
+}
+
+.app.dark-mode .info-card h4,
+.app.dark-mode .info-card p,
+.app.dark-mode .info-card li {
+  color: #ecf0f1;
+}

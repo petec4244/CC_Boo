@@ -611,3 +611,84 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* Dark Mode Support */
+.app.dark-mode .logic-gates {
+  color: #ecf0f1;
+}
+
+.app.dark-mode .gates-header {
+  background: linear-gradient(135deg, #34495e 0%, #2c3e50 100%);
+}
+
+.app.dark-mode .gates-section {
+  background: #34495e;
+  color: #ecf0f1;
+}
+
+.app.dark-mode .gate-info-box,
+.app.dark-mode .simulator-box {
+  background: #415a77;
+  color: #ecf0f1;
+}
+
+.app.dark-mode .input-toggle,
+.app.dark-mode .gate-visual,
+.app.dark-mode .output-display {
+  background: #2c3e50;
+  color: #ecf0f1;
+}
+
+.app.dark-mode .truth-table {
+  background: #2c3e50;
+  color: #ecf0f1;
+}
+
+.app.dark-mode .truth-header {
+  background: #5dade2;
+  color: #1a1a2e;
+}
+
+.app.dark-mode .circuit-example {
+  background: #415a77;
+  color: #ecf0f1;
+}
+
+.app.dark-mode .applications-section {
+  background: linear-gradient(to bottom, #34495e, #2c3e50);
+}
+
+.app.dark-mode .app-card {
+  background: #415a77;
+  color: #ecf0f1;
+}
+
+.app.dark-mode .app-card h4,
+.app.dark-mode .app-card p {
+  color: #ecf0f1;
+}
+
+.app.dark-mode .challenges-section {
+  background: linear-gradient(135deg, #34495e 0%, #2c3e50 100%);
+}
+
+.app.dark-mode .challenge-card {
+  background: #415a77;
+}
+
+.app.dark-mode .challenge-content h4,
+.app.dark-mode .challenge-content p {
+  color: #ecf0f1;
+}
+
+.app.dark-mode .facts-section {
+  background: linear-gradient(to bottom, #34495e, #2c3e50);
+}
+
+.app.dark-mode .fact-item {
+  background: #415a77;
+}
+
+.app.dark-mode .fact-text {
+  color: #ecf0f1;
+}

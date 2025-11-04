@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import BinaryGame from './components/BinaryGame';
 import HexExplorer from './components/HexExplorer';
 import MemoryVisualizer from './components/MemoryVisualizer';
@@ -14,6 +14,19 @@ import './App.css';
 
 function App() {
   const [currentLesson, setCurrentLesson] = useState('home');
+  const [darkMode, setDarkMode] = useState(() => {
+    const saved = localStorage.getItem('darkMode');
+    return saved ? JSON.parse(saved) : false;
+  });
+
+  useEffect(() => {
+    localStorage.setItem('darkMode', JSON.stringify(darkMode));
+    if (darkMode) {
+      document.body.classList.add('dark-mode');
+    } else {
+      document.body.classList.remove('dark-mode');
+    }
+  }, [darkMode]);
 
   const renderLesson = () => {
     switch(currentLesson) {
@@ -46,11 +59,20 @@ function App() {
   };
 
   return (
-    <div className="app">
+    <div className={`app ${darkMode ? 'dark-mode' : ''}`}>
       <header className="app-header">
-        <h1 onClick={() => setCurrentLesson('home')} style={{ cursor: 'pointer' }}>
-          🚀 Computer Data & Memory Learning Lab
-        </h1>
+        <div className="header-content">
+          <h1 onClick={() => setCurrentLesson('home')} style={{ cursor: 'pointer' }}>
+            🚀 Computer Data & Memory Learning Lab
+          </h1>
+          <button
+            className="dark-mode-toggle"
+            onClick={() => setDarkMode(!darkMode)}
+            aria-label="Toggle dark mode"
+          >
+            {darkMode ? '☀️' : '🌙'}
+          </button>
+        </div>
         <p className="tagline">Learn how computers store and use information!</p>
       </header>
 

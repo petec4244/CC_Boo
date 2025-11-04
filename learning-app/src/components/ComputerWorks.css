@@ -620,3 +620,63 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* Dark Mode Support */
+.app.dark-mode .computer-works {
+  color: #ecf0f1;
+}
+
+.app.dark-mode .works-header {
+  background: linear-gradient(135deg, #34495e 0%, #2c3e50 100%);
+}
+
+.app.dark-mode .works-section {
+  background: #34495e;
+  color: #ecf0f1;
+}
+
+.app.dark-mode .component-box,
+.app.dark-mode .component-detail {
+  background: #415a77;
+  color: #ecf0f1;
+}
+
+.app.dark-mode .cpu-section {
+  background: linear-gradient(to bottom, #34495e, #2c3e50);
+}
+
+.app.dark-mode .cpu-step {
+  background: #415a77;
+  color: #ecf0f1;
+}
+
+.app.dark-mode .speed-section {
+  background: linear-gradient(to bottom, #34495e, #2c3e50);
+}
+
+.app.dark-mode .speed-card {
+  background: #415a77;
+  color: #ecf0f1;
+}
+
+.app.dark-mode .logic-section {
+  background: linear-gradient(to bottom, #34495e, #2c3e50);
+}
+
+.app.dark-mode .journey-section {
+  background: linear-gradient(to bottom, #34495e, #2c3e50);
+}
+
+.app.dark-mode .journey-step {
+  background: #415a77;
+  color: #ecf0f1;
+}
+
+.app.dark-mode .facts-section {
+  background: linear-gradient(135deg, #34495e 0%, #2c3e50 100%);
+}
+
+.app.dark-mode .fact-box {
+  background: #415a77;
+  color: #ecf0f1;
+}

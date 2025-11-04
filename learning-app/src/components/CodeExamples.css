@@ -193,3 +193,42 @@
 .code-block::-webkit-scrollbar-thumb:hover {
   background: #7f8c8d;
 }
+
+/* Dark Mode Support */
+.app.dark-mode .code-examples {
+  color: #ecf0f1;
+}
+
+.app.dark-mode .examples-header {
+  background: linear-gradient(135deg, #34495e 0%, #2c3e50 100%);
+}
+
+.app.dark-mode .examples-section {
+  background: #34495e;
+  color: #ecf0f1;
+}
+
+.app.dark-mode .language-selector button {
+  background: #415a77;
+  color: #ecf0f1;
+  border-color: #5dade2;
+}
+
+.app.dark-mode .language-selector button.active {
+  background: #5dade2;
+  color: #1a1a2e;
+}
+
+.app.dark-mode .code-block {
+  background: #1a1a2e;
+}
+
+.app.dark-mode .code-block pre {
+  background: #1a1a2e;
+  color: #ecf0f1;
+}
+
+.app.dark-mode .explanation {
+  background: #415a77;
+  color: #ecf0f1;
+}

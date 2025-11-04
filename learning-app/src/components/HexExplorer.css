@@ -251,3 +251,145 @@
   font-size: 16px;
   color: #2c3e50;
 }
+
+/* Tutorial Section */
+.hex-explorer .tutorial-section {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  color: white;
+  padding: 25px;
+  border-radius: 15px;
+  margin: 20px 0;
+  position: relative;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.hex-explorer .tutorial-section h3 {
+  margin: 0 0 15px 0;
+  font-size: 24px;
+}
+
+.hex-explorer .close-tutorial {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  color: white;
+  font-size: 28px;
+  cursor: pointer;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s;
+}
+
+.hex-explorer .close-tutorial:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: rotate(90deg);
+}
+
+.hex-explorer .tutorial-content p {
+  margin: 0 0 15px 0;
+  font-size: 16px;
+}
+
+.hex-explorer .tutorial-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 20px 0;
+}
+
+.hex-explorer .step {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 12px;
+  border-radius: 8px;
+}
+
+.hex-explorer .step-num {
+  font-size: 24px;
+  flex-shrink: 0;
+}
+
+.hex-explorer .step p {
+  margin: 0;
+  line-height: 1.6;
+  font-size: 15px;
+}
+
+.hex-explorer .tutorial-example {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 15px;
+  border-radius: 8px;
+  margin-top: 15px;
+  border-left: 4px solid #ffd700;
+}
+
+.hex-explorer .tutorial-example p {
+  margin: 5px 0;
+  font-size: 15px;
+}
+
+.hex-explorer .show-help {
+  display: block;
+  margin: 0 auto 20px auto;
+  padding: 8px 20px;
+  background: #e74c3c;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.3s;
+}
+
+.hex-explorer .show-help:hover {
+  background: #c0392b;
+  transform: scale(1.05);
+}
+
+/* Color Breakdown */
+.color-breakdown {
+  position: absolute;
+  bottom: 15px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.breakdown-item {
+  background: rgba(0, 0, 0, 0.3);
+  padding: 10px 15px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
+.breakdown-item span {
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.hex-small {
+  font-size: 13px !important;
+  opacity: 0.9;
+  font-family: monospace;
+}
+
+.color-preview {
+  position: relative;
+  flex-direction: column;
+  gap: 20px;
+}

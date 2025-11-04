@@ -1,0 +1,195 @@
+.code-examples {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.code-examples h2 {
+  text-align: center;
+  color: #2c3e50;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  text-align: center;
+  color: #7f8c8d;
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+.controls {
+  margin-bottom: 30px;
+}
+
+.language-selector {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.language-selector button {
+  padding: 15px 30px;
+  font-size: 18px;
+  border: 2px solid #3498db;
+  background: white;
+  color: #3498db;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-weight: bold;
+}
+
+.language-selector button:hover {
+  background: #e3f2fd;
+  transform: translateY(-2px);
+}
+
+.language-selector button.active {
+  background: #3498db;
+  color: white;
+  box-shadow: 0 4px 12px rgba(52, 152, 219, 0.4);
+}
+
+.topic-selector {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.topic-selector button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: 2px solid #95a5a6;
+  background: white;
+  color: #7f8c8d;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.topic-selector button:hover {
+  background: #ecf0f1;
+}
+
+.topic-selector button.active {
+  background: #27ae60;
+  border-color: #27ae60;
+  color: white;
+  box-shadow: 0 2px 8px rgba(39, 174, 96, 0.4);
+}
+
+.example-display {
+  background: white;
+  border-radius: 10px;
+  border: 2px solid #ecf0f1;
+  padding: 25px;
+  margin-bottom: 30px;
+}
+
+.example-display h3 {
+  color: #2c3e50;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.description {
+  color: #7f8c8d;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.code-block {
+  background: #2c3e50;
+  border-radius: 8px;
+  padding: 20px;
+  overflow-x: auto;
+  margin: 0;
+}
+
+.code-block code {
+  color: #2ecc71;
+  font-family: 'Courier New', Consolas, Monaco, monospace;
+  font-size: 14px;
+  line-height: 1.8;
+  white-space: pre;
+  display: block;
+}
+
+.learn-section {
+  background: #f8f9fa;
+  padding: 25px;
+  border-radius: 10px;
+}
+
+.learn-section h3 {
+  color: #2c3e50;
+  margin-top: 0;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.comparison-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.comparison-card {
+  padding: 20px;
+  border-radius: 10px;
+  border: 3px solid;
+}
+
+.comparison-card.python {
+  background: #e8f5e9;
+  border-color: #4caf50;
+}
+
+.comparison-card.c {
+  background: #e3f2fd;
+  border-color: #2196f3;
+}
+
+.comparison-card.cpp {
+  background: #f3e5f5;
+  border-color: #9c27b0;
+}
+
+.comparison-card h4 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-size: 20px;
+  color: #2c3e50;
+}
+
+.comparison-card ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.comparison-card li {
+  margin: 10px 0;
+  color: #34495e;
+  line-height: 1.6;
+}
+
+/* Scrollbar styling for code blocks */
+.code-block::-webkit-scrollbar {
+  height: 8px;
+}
+
+.code-block::-webkit-scrollbar-track {
+  background: #34495e;
+  border-radius: 4px;
+}
+
+.code-block::-webkit-scrollbar-thumb {
+  background: #95a5a6;
+  border-radius: 4px;
+}
+
+.code-block::-webkit-scrollbar-thumb:hover {
+  background: #7f8c8d;
+}

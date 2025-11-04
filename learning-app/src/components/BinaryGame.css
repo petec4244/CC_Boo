@@ -1,0 +1,213 @@
+.binary-game {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.game-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.game-header h2 {
+  margin: 0;
+  color: #2c3e50;
+}
+
+.score {
+  font-size: 24px;
+  font-weight: bold;
+  color: #27ae60;
+  background: #e8f8f5;
+  padding: 10px 20px;
+  border-radius: 20px;
+}
+
+.level-selector {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  justify-content: center;
+}
+
+.level-selector button {
+  padding: 10px 20px;
+  border: 2px solid #3498db;
+  background: white;
+  color: #3498db;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.3s;
+}
+
+.level-selector button:hover {
+  background: #e3f2fd;
+}
+
+.level-selector button.active {
+  background: #3498db;
+  color: white;
+}
+
+.instruction {
+  text-align: center;
+  margin: 30px 0;
+}
+
+.instruction p {
+  font-size: 20px;
+  margin: 10px 0;
+}
+
+.target-number {
+  font-size: 48px;
+  font-weight: bold;
+  color: #e74c3c;
+  background: #fadbd8;
+  padding: 10px 30px;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+.help-text {
+  font-size: 16px !important;
+  color: #7f8c8d;
+}
+
+.binary-explanation {
+  margin: 20px 0;
+}
+
+.bit-values {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.bit-value {
+  width: 80px;
+  padding: 10px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: bold;
+  color: #95a5a6;
+  font-size: 18px;
+}
+
+.bits-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.bit {
+  width: 80px;
+  height: 80px;
+  border: 3px solid #34495e;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-size: 36px;
+  font-weight: bold;
+}
+
+.bit.off {
+  background: #ecf0f1;
+  color: #95a5a6;
+}
+
+.bit.on {
+  background: #3498db;
+  color: white;
+  border-color: #2980b9;
+  box-shadow: 0 4px 12px rgba(52, 152, 219, 0.4);
+}
+
+.bit:hover {
+  transform: scale(1.05);
+}
+
+.current-value {
+  text-align: center;
+  margin: 30px 0;
+  font-size: 24px;
+}
+
+.user-number {
+  font-size: 36px;
+  font-weight: bold;
+  color: #3498db;
+  background: #e3f2fd;
+  padding: 10px 30px;
+  border-radius: 10px;
+  display: inline-block;
+}
+
+.check-button {
+  display: block;
+  margin: 20px auto;
+  padding: 15px 50px;
+  font-size: 20px;
+  background: #27ae60;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-weight: bold;
+}
+
+.check-button:hover {
+  background: #229954;
+  transform: scale(1.05);
+}
+
+.message {
+  text-align: center;
+  padding: 15px;
+  border-radius: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  margin: 20px 0;
+}
+
+.message.success {
+  background: #d5f4e6;
+  color: #27ae60;
+}
+
+.message.error {
+  background: #fadbd8;
+  color: #e74c3c;
+}
+
+.learn-section {
+  background: #f8f9fa;
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 30px;
+}
+
+.learn-section h3 {
+  color: #2c3e50;
+  margin-top: 0;
+}
+
+.learn-section ul {
+  padding-left: 20px;
+}
+
+.learn-section li {
+  margin: 10px 0;
+  font-size: 16px;
+  line-height: 1.6;
+}

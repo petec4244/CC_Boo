@@ -701,6 +701,172 @@ func main() {
           </table>
         </div>
       </div>
+
+      <div className="learn-section oop-section">
+        <h3>🎨 What is Object-Oriented Programming (OOP)?</h3>
+        <p className="oop-intro">
+          Object-Oriented Programming is like organizing your code into "things" that have properties and can do actions -
+          just like objects in the real world!
+        </p>
+
+        <div className="oop-concepts">
+          <div className="oop-concept">
+            <h4>🎯 Classes & Objects</h4>
+            <p><strong>Class</strong> = A blueprint or template (like a cookie cutter)</p>
+            <p><strong>Object</strong> = An actual thing made from that blueprint (like a cookie)</p>
+            <div className="oop-example">
+              <strong>Example:</strong> A "Dog" class is the blueprint. "Buddy" and "Max" are actual dog objects created from it!
+            </div>
+          </div>
+
+          <div className="oop-concept">
+            <h4>📦 Encapsulation</h4>
+            <p>Keeping related data and functions together in one package, hiding the complex stuff inside.</p>
+            <div className="oop-example">
+              <strong>Like a TV remote:</strong> You press buttons (simple interface), but don't need to know about
+              the circuits inside (hidden complexity).
+            </div>
+          </div>
+
+          <div className="oop-concept">
+            <h4>👨‍👩‍👧 Inheritance</h4>
+            <p>Creating new classes based on existing ones, inheriting their properties and behaviors.</p>
+            <div className="oop-example">
+              <strong>Example:</strong> "Animal" class has eating and sleeping. "Dog" class inherits those,
+              plus adds barking!
+            </div>
+          </div>
+
+          <div className="oop-concept">
+            <h4>🎭 Polymorphism</h4>
+            <p>Different objects can respond to the same command in their own way.</p>
+            <div className="oop-example">
+              <strong>Example:</strong> Both dogs and cats have a "makeSound()" method, but dogs bark and cats meow!
+            </div>
+          </div>
+        </div>
+
+        <div className="oop-code-examples">
+          <h4>💡 Simple OOP Example:</h4>
+          <div className="oop-comparison-grid">
+            <div className="oop-lang-example python">
+              <h5>🐍 Python</h5>
+              <pre><code>{`class Dog:
+    def __init__(self, name, age):
+        self.name = name  # Property
+        self.age = age    # Property
+
+    def bark(self):      # Method
+        return f"{self.name} says Woof!"
+
+# Create objects
+buddy = Dog("Buddy", 3)
+max = Dog("Max", 5)
+
+print(buddy.bark())  # "Buddy says Woof!"
+print(max.age)       # 5`}</code></pre>
+            </div>
+
+            <div className="oop-lang-example javascript">
+              <h5>🌐 JavaScript</h5>
+              <pre><code>{`class Dog {
+    constructor(name, age) {
+        this.name = name;  // Property
+        this.age = age;    // Property
+    }
+
+    bark() {              // Method
+        return \`\${this.name} says Woof!\`;
+    }
+}
+
+// Create objects
+let buddy = new Dog("Buddy", 3);
+let max = new Dog("Max", 5);
+
+console.log(buddy.bark());  // "Buddy says Woof!"
+console.log(max.age);       // 5`}</code></pre>
+            </div>
+
+            <div className="oop-lang-example java">
+              <h5>☕ Java</h5>
+              <pre><code>{`public class Dog {
+    private String name;  // Property
+    private int age;      // Property
+
+    public Dog(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    public String bark() {  // Method
+        return name + " says Woof!";
+    }
+}
+
+// Create objects
+Dog buddy = new Dog("Buddy", 3);
+Dog max = new Dog("Max", 5);
+System.out.println(buddy.bark());`}</code></pre>
+            </div>
+
+            <div className="oop-lang-example cpp">
+              <h5>⚡ C++</h5>
+              <pre><code>{`class Dog {
+private:
+    string name;  // Property
+    int age;      // Property
+
+public:
+    Dog(string n, int a) : name(n), age(a) {}
+
+    string bark() {  // Method
+        return name + " says Woof!";
+    }
+};
+
+// Create objects
+Dog buddy("Buddy", 3);
+Dog max("Max", 5);
+cout << buddy.bark();`}</code></pre>
+            </div>
+          </div>
+        </div>
+
+        <div className="oop-language-support">
+          <h4>🔍 OOP Support in Each Language:</h4>
+          <div className="oop-support-grid">
+            <div className="support-item full">
+              <span className="support-badge">✅ Full OOP</span>
+              <strong>Python, JavaScript, Java, C++</strong> - Complete OOP support with classes, inheritance, etc.
+            </div>
+            <div className="support-item partial">
+              <span className="support-badge">⚡ Modern OOP</span>
+              <strong>Rust, Go</strong> - Use structs and traits/interfaces instead of traditional classes
+            </div>
+            <div className="support-item none">
+              <span className="support-badge">❌ No OOP</span>
+              <strong>C</strong> - Procedural language, uses functions and structs without classes
+            </div>
+          </div>
+        </div>
+
+        <div className="oop-why">
+          <h4>🌟 Why Use Object-Oriented Programming?</h4>
+          <ul>
+            <li><strong>🗂️ Organization:</strong> Code is organized like things in real life - easy to understand!</li>
+            <li><strong>♻️ Reusability:</strong> Create a class once, use it many times (like a template)</li>
+            <li><strong>🔧 Easy to Modify:</strong> Change one class without breaking everything else</li>
+            <li><strong>👥 Team Work:</strong> Different people can work on different classes</li>
+            <li><strong>🧩 Real World Modeling:</strong> Perfect for games, apps with users, shopping carts, etc.</li>
+          </ul>
+        </div>
+
+        <div className="oop-tip">
+          <strong>💡 Pro Tip:</strong> Start with Python or JavaScript to learn OOP - they're the easiest!
+          Once you understand the concepts, they work similarly in other languages.
+        </div>
+      </div>
     </div>
   );
 }
